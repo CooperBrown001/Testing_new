@@ -1,11 +1,36 @@
-# 提示用户输入第一个数字
-num1 = float(input("请输入第一个数字: "))
+def is_even(number):
+    """检查一个数字是否是偶数"""
+    return number % 2 == 0
 
-# 提示用户输入第二个数字
-num2 = float(input("请输入第二个数字: "))
+# 提示用户输入第一个数字，直到输入有效为止
+while True:
+    try:
+        num1 = float(input("请输入第一个数字: "))
+        break  # 如果输入有效，则跳出循环
+    except ValueError:
+        print("输入无效，请输入一个有效的数字！")
+
+# 提示用户输入第二个数字，直到输入有效为止
+while True:
+    try:
+        num2 = float(input("请输入第二个数字: "))
+        break  # 如果输入有效，则跳出循环
+    except ValueError:
+        print("输入无效，请输入一个有效的数字！")
 
 # 计算两个数字的和
 sum = num1 + num2
 
 # 输出结果
 print("两个数字的和为:", sum)
+
+# 检查并输出输入的数字是否为偶数或奇数
+if is_even(num1):
+    print(f"{num1} 是偶数。")
+else:
+    print(f"{num1} 是奇数。")
+
+if is_even(num2):
+    print(f"{num2} 是偶数。")
+else:
+    print(f"{num2} 是奇数。")
