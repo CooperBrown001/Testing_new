@@ -34,3 +34,4 @@ if is_even(num2):
     print(f"{num2} 是偶数。")
 else:
     print(f"{num2} 是奇数。")
+print('666')
