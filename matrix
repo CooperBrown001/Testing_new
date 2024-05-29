@@ -1,0 +1,29 @@
+import random
+
+def generate_random_matrix(rows, cols):
+    matrix = []
+    for i in range(rows):
+        row = [random.randint(1, 100) for _ in range(cols)]
+        matrix.append(row)
+    return matrix
+
+def find_maximum_value(matrix):
+    max_value = float('-inf')
+    for row in matrix:
+        for value in row:
+            if value > max_value:
+                max_value = value
+    return max_value
+
+def main():
+    rows = random.randint(2, 5)
+    cols = random.randint(2, 5)
+    matrix = generate_random_matrix(rows, cols)
+    print("Generated Matrix:")
+    for row in matrix:
+        print(row)
+    max_value = find_maximum_value(matrix)
+    print("Maximum value in the matrix:", max_value)
+
+if __name__ == "__main__":
+    main()
